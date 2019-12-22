@@ -5,7 +5,7 @@
  */
 package domain;
 
-import javafx.scene.chart.PieChart.Data;
+import java.util.Date;
 
 /**
  *
@@ -18,17 +18,21 @@ public class Product {
     private double price;
     private String productType;
     private String productType2;
-    private Data data;
+    private Date date;
     private String store;
     private String otherInfo;
+    
+    public Product(){
+    
+    }
 
-    public Product(int id, String name, double price, String productType, String productType2, Data data, String store, String otherInfo) {
+    public Product(int id, String name, double price, String productType, String productType2, Date date, String store, String otherInfo) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.productType = productType;
         this.productType2 = productType2;
-        this.data = data;
+        this.date = date;
         this.store = store;
         this.otherInfo = otherInfo;
     }
@@ -73,12 +77,12 @@ public class Product {
         this.productType2 = productType2;
     }
 
-    public Data getData() {
-        return data;
+    public Date getdate() {
+        return date;
     }
 
-    public void setData(Data data) {
-        this.data = data;
+    public void setdate(Date date) {
+        this.date = date;
     }
 
     public String getStore() {
@@ -99,6 +103,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product: " + "id=" + id + ", name=" + name + ", price=" + price + ", productType=" + productType + ", productType2=" + productType2 + ", data=" + data + ", store=" + store + ", otherInfo=" + otherInfo;
+        return "Product: " + "id=" + id + ", name=" + name + ", price=" + price + ", productType=" + productType + ", productType2=" + productType2 + ", date=" + date + ", store=" + store + ", otherInfo=" + otherInfo;
     }
 }
