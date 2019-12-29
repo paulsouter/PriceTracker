@@ -16,13 +16,15 @@ import java.util.HashSet;
  */
 public class CollectionsDao implements DaoInterface {
 
-    private Collection<Product> productList = new HashSet();
+    private final Collection<Product> productList = new HashSet();
 
+    @Override
     public void addProduct(Product product) {
         productList.add(product);
 
     }
 
+    @Override
     public void deleteProduct(Product product) {
         for (Product p : productList) {
             if (p.getId() == product.getId()) {
@@ -33,6 +35,7 @@ public class CollectionsDao implements DaoInterface {
 
     }
 
+    @Override
     public void editProduct(Product product) {
         int id = product.getId();
         for (Product p : productList) {
@@ -44,6 +47,7 @@ public class CollectionsDao implements DaoInterface {
         }
     }
 
+    @Override
     public Collection<Product> filterSearchType1(String productType) {
         Collection<Product> products = new HashSet();
         for (Product p : productList) {
@@ -55,6 +59,7 @@ public class CollectionsDao implements DaoInterface {
         return products;
     }
 
+    @Override
     public Collection<Product> filterSearchType2(String productType2) {
         Collection<Product> products = new HashSet();
         for (Product p : productList) {
@@ -67,6 +72,7 @@ public class CollectionsDao implements DaoInterface {
 
     }
 
+    @Override
     public Collection<Product> searchName(String name) {
         Collection<Product> products = new HashSet();
         for (Product p : productList) {
@@ -77,6 +83,7 @@ public class CollectionsDao implements DaoInterface {
         return products;
     }
 
+    @Override
     public Collection<String> getType1() {
         Collection<String> type1 = new HashSet();
         for (Product p : productList) {
@@ -85,6 +92,7 @@ public class CollectionsDao implements DaoInterface {
         return type1;
     }
 
+    @Override
     public Collection<String> getType2() {
         Collection<String> type2 = new HashSet();
         for (Product p : productList) {
@@ -94,6 +102,7 @@ public class CollectionsDao implements DaoInterface {
 
     }
 
+    @Override
     public Collection<String> getNames() {
         Collection<String> names = new HashSet();
         for (Product p : productList) {
@@ -102,6 +111,7 @@ public class CollectionsDao implements DaoInterface {
         return names;
     }
 
+    @Override
     public Collection<Product> getProducts() {
 
         return productList;
@@ -118,6 +128,7 @@ public class CollectionsDao implements DaoInterface {
 
     }
 
+    @Override
     public boolean inDatabase(int id) {
         boolean result = false;
         for (Product p : productList) {

@@ -33,7 +33,7 @@ public class Terminal {
         while (!sc.hasNext("quit")) {
             String input = sc.nextLine();
             String args = "";
-            int count = input.length() - input.replace(" ", "").length();
+            int count = input.length() - input.replace(" ", "").length();//doesn't work
             if (count > 1) {
                 args = input.substring(0, input.lastIndexOf(" "));
             }
